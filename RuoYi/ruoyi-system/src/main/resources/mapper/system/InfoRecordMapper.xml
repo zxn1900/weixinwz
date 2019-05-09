@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.InfoRecordMapper">
+    
+    <resultMap type="InfoRecord" id="InfoRecordResult">
+        <result property="id"    column="id"    />
+        <result property="userId"    column="user_id"    />
+        <result property="createTime"    column="createTime"    />
+        <result property="remark"    column="remark"    />
+        <result property="dataType"    column="data_type"    />
+        <result property="userAgent"    column="user_agent"    />
+        <result property="remoteAddr"    column="remote_addr"    />
+        <result property="method"    column="method"    />
+        <result property="requestUri"    column="request_uri"    />
+    </resultMap>
+	
+	<sql id="selectInfoRecordVo">
+        select id, user_id, createTime, remark, data_type, user_agent, remote_addr, method, request_uri from info_record
+    </sql>
+	
+    <select id="selectInfoRecordList" parameterType="InfoRecord" resultMap="InfoRecordResult">
+        <include refid="selectInfoRecordVo"/>
+        <where>  
+            <if test="id != null "> and id = #{id}</if>
+             <if test="userId != null "> and user_id = #{userId}</if>
+             <if test="createTime != null "> and createTime = #{createTime}</if>
+             <if test="remark != null  and remark != '' "> and remark = #{remark}</if>
+             <if test="dataType != null  and dataType != '' "> and data_type = #{dataType}</if>
+             <if test="userAgent != null  and userAgent != '' "> and user_agent = #{userAgent}</if>
+             <if test="remoteAddr != null  and remoteAddr != '' "> and remote_addr = #{remoteAddr}</if>
+             <if test="method != null  and method != '' "> and method = #{method}</if>
+             <if test="requestUri != null  and requestUri != '' "> and request_uri = #{requestUri}</if>
+         </where>
+        order by createTime desc
+    </select>
+    
+    <select id="selectInfoRecordById" parameterType="Integer" resultMap="InfoRecordResult">
+        <include refid="selectInfoRecordVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertInfoRecord" parameterType="InfoRecord" useGeneratedKeys="true" keyProperty="id">
+        insert into info_record
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="userId != null  ">user_id,</if>
+			<if test="createTime != null  ">createTime,</if>
+			<if test="remark != null  and remark != ''  ">remark,</if>
+			<if test="dataType != null  and dataType != ''  ">data_type,</if>
+			<if test="userAgent != null  and userAgent != ''  ">user_agent,</if>
+			<if test="remoteAddr != null  and remoteAddr != ''  ">remote_addr,</if>
+			<if test="method != null  and method != ''  ">method,</if>
+			<if test="requestUri != null  and requestUri != ''  ">request_uri,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="userId != null  ">#{userId},</if>
+			<if test="createTime != null  ">#{createTime},</if>
+			<if test="remark != null  and remark != ''  ">#{remark},</if>
+			<if test="dataType != null  and dataType != ''  ">#{dataType},</if>
+			<if test="userAgent != null  and userAgent != ''  ">#{userAgent},</if>
+			<if test="remoteAddr != null  and remoteAddr != ''  ">#{remoteAddr},</if>
+			<if test="method != null  and method != ''  ">#{method},</if>
+			<if test="requestUri != null  and requestUri != ''  ">#{requestUri},</if>
+         </trim>
+    </insert>
+	 
+    <update id="updateInfoRecord" parameterType="InfoRecord">
+        update info_record
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userId != null  ">user_id = #{userId},</if>
+            <if test="createTime != null  ">createTime = #{createTime},</if>
+            <if test="remark != null  and remark != ''  ">remark = #{remark},</if>
+            <if test="dataType != null  and dataType != ''  ">data_type = #{dataType},</if>
+            <if test="userAgent != null  and userAgent != ''  ">user_agent = #{userAgent},</if>
+            <if test="remoteAddr != null  and remoteAddr != ''  ">remote_addr = #{remoteAddr},</if>
+            <if test="method != null  and method != ''  ">method = #{method},</if>
+            <if test="requestUri != null  and requestUri != ''  ">request_uri = #{requestUri},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+	<delete id="deleteInfoRecordById" parameterType="Integer">
+        delete from info_record where id = #{id}
+    </delete>
+	
+    <delete id="deleteInfoRecordByIds" parameterType="String">
+        delete from info_record where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>

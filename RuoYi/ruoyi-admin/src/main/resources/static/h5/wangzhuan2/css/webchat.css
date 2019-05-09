@@ -1,0 +1,224 @@
+/* CSS Document */
+
+::selection{background:blue; color:FFFF66;}  
+::-moz-selection{background:blue; color:white;}  
+::-webkit-selection{background:blue; color:white;}  
+
+.zmtWechat{
+
+			width:100%;
+
+			max-width:640px;
+
+			height:40px;
+
+			position:fixed;
+
+			bottom:0px;
+
+			
+
+}
+
+
+.wechatIcon{
+
+			width:30px;
+
+			vertical-align: middle;
+
+			
+
+}
+.we1{
+			background:#1616a7;
+			position:relative;zoom:1; overflow:hidden;
+
+			color:#FFFFFF;
+
+			float:left;
+
+			width:40%;
+
+			height:50px;
+
+			line-height:50px;
+
+			font-size:18px;
+
+			padding-top:0px;
+
+
+}
+
+.we1 a{
+
+			color:#FFFFFF;
+
+			text-decoration:none;
+
+}
+
+.we2{
+
+			width:60%;
+
+			background:#302825;
+
+			height:50px;
+
+			line-height:50px;
+
+			float:left;
+
+			color:#FFFFFF;
+			font-size:18px;
+
+			padding-top:0px;
+
+}
+.zmtWechat{
+
+			width:100%;
+
+			height:50px;
+
+			position:fixed;
+
+			bottom:0px;
+
+			
+
+}
+
+
+
+.xx{
+
+			width:240px;
+
+			vertical-align: middle;
+
+			
+
+}
+
+			
+
+
+
+.wechatBox{
+
+		display: none;
+
+		width:100%;
+
+		height:100%;
+
+		position:fixed;
+
+		top:0px;
+
+		z-index: 5;
+
+}
+
+		
+
+		
+
+.wechat{
+
+		position:fixed;
+
+		top:23%;
+
+		width:68%;
+
+		right:16%;
+
+		left:16%;            
+
+		color:#666;
+
+		text-align:center;
+
+		-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+		-moz-box-shadow: 1px 1px 2x rgba(0, 0, 0, 1);
+
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+		border-radius: 20px;
+
+		-moz-border-radius: 20px;
+
+		-webkit-border-radius: 20px;
+
+		background: #fff;
+
+		z-index: 999;
+
+		display: none;
+		padding:13px 0px;
+
+}
+
+.wechatimg{
+
+		position:fixed;
+
+		top:20%;
+
+		width:68%;
+
+		right:10%;
+
+		left:10%;            
+
+		color:#666;
+
+		text-align:center;
+
+		-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+		-moz-box-shadow: 1px 1px 2x rgba(0, 0, 0, 1);
+
+		box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+		border-radius: 20px;
+
+		-moz-border-radius: 20px;
+
+		-webkit-border-radius: 20px;
+
+		background: #fff;
+
+		z-index: 5000;
+
+		display: none;
+
+}
+.wechatimg img{ width:100%}
+
+.wechat .p1{
+
+	font-size:24px;
+
+}
+
+.wechat .p2{
+
+	font-size:1.1rem;
+
+}
+
+.wechat .wxid{
+	font-size:38px;
+
+		background-color:#2680d8;
+
+		color:#FFF;
+
+		padding:10px;
+		margin:10px 0px;
+
+}
